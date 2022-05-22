@@ -1,24 +1,15 @@
-package com.demo.user.ui.model;
+package com.demo.user.shared;
 
+import java.io.Serializable;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+public class UserDTO implements Serializable {
 
-public class CreateUserRequestModel {
-
-    @NotNull(message = "firstname can not be null")
-    @Size(min = 2, message = "name cannot be less than 2 character")
     private String firstName;
-    @NotNull(message = "lastname can not be null")
-    @Size(min = 2, message = "last name cannot be less than 2 character")
     private String lastName;
-    @NotNull(message = "password can not be null")
-    @Size(min = 6, max = 16, message = "password length does not match")
     private String password;
-    @NotNull(message = "email can not be null")
-    @Email
     private String email;
+    private String userId;
+    private String encryptedPassword;
 
     public String getFirstName() {
         return firstName;
@@ -50,5 +41,21 @@ public class CreateUserRequestModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getEncryptedPassword() {
+        return encryptedPassword;
+    }
+
+    public void setEncryptedPassword(String encryptedPassword) {
+        this.encryptedPassword = encryptedPassword;
     }
 }
