@@ -6,4 +6,5 @@ import java.math.BigInteger;
 
 public interface UserRepository extends CrudRepository<UserEntity, BigInteger> {
 
+    UserEntity findByEmail(String email);
 }
