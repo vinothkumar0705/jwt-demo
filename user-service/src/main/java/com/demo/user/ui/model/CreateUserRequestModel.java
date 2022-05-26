@@ -52,3 +52,5 @@ public class CreateUserRequestModel {
         this.email = email;
     }
 }
+
+
