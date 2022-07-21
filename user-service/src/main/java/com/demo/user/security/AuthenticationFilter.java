@@ -62,6 +62,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
                 .compact();
         response.addHeader("token",token);
         response.addHeader("userId", userDetails.getUserId());
+        System.out.println("token.expiration_time " + environment.getProperty("token.expiration_time"));
     }
 
 }
